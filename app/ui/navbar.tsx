@@ -2,13 +2,23 @@ import { NavigationMenuItem, NavigationMenu, NavigationMenuList, NavigationMenuL
 import Link from "next/link"
 import { Flower, Shovel, Amphora, SprayCan } from "lucide-react"
 
+import { Petit_Formal_Script } from "@next/font/google"
+
+const petit = Petit_Formal_Script({
+    subsets: ['latin'],
+    weight: '400'
+})
+
 export default function Navbar(){
     return(
         <div className="flex flex-row justify-between">
             <div>
-                <Link href="/" className="flex flex-row items-center space-x-2 hover:[&>h2]:underline hover:[&>h2]:font-light">
+                <Link href="/" className="flex flex-row items-center space-x-2 hover:[&>h2]:underline">
                     <img src="https://placehold.co/80" alt="placeholder"></img>
-                    <h2 className="text-2xl italic">FlowerShop Co.</h2>
+                    {/* <h2 className={`text-8xl text-white ${petit.className}`}>Ninos</h2> */}
+                    <svg height="80" width="200" xmlns="http://www.w3.org/2000/svg">
+                        <text x="5" y="60" paintOrder="stroke fill markers" className={`fill-white stroke-black stroke-2 order text-6xl ${petit.className}`}>Ninos</text>
+                    </svg>
                 </Link>
             </div>
             <div>
